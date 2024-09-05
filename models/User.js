@@ -25,6 +25,17 @@ const User = sequelize.define('User', {
     phone_number: {
         type: DataTypes.STRING(20),
     },
+    address: {
+        type: DataTypes.STRING(250),
+    },
+    role: {
+        type: DataTypes.STRING(20),
+    },
+    status: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+    },
 }, {
     timestamps: true,
     createdAt: 'created_at',

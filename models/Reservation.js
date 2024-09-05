@@ -12,12 +12,15 @@ const Reservation = sequelize.define('Reservation', {
         allowNull: false,
     },
     service_type: {
-        type: DataTypes.ENUM('dine-in', 'delivery'),
+        type: DataTypes.ENUM('breakfast', 'dinner', 'lunch'),
         allowNull: false,
     },
     status: {
-        type: DataTypes.ENUM('pending', 'confirmed', 'canceled'),
+        type: DataTypes.ENUM('pending', 'confirmed', 'rejected'),
         defaultValue: 'pending',
+    },
+    remark: {
+        type: DataTypes.STRING(250),
     },
 }, {
     timestamps: true,
